@@ -13,7 +13,7 @@ const app = express();
 
 
 const corsOptions = {
-  origin:["https://swiftfreightsolutions.ltd/","https://www.swiftfreightsolutions.ltd/","http://127.0.0.1:5500"], 
+  origin:["https://swiftfreightsolutions.ltd","https://www.swiftfreightsolutions.ltd","http://127.0.0.1:5500"], 
   // origin:'http://127.0.0.1:8080', 
    credentials:true,      
    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],      //access-control-allow-credentials:true

@@ -350,9 +350,9 @@ padding-top: 10px;
 
    let transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,   // smtp.hostinger.com
-  port: 465,
-  // port: 587,
-  secure: true, // ❗ false for port 587
+  // port: 465,
+ port: 587,
+ secure: false, 
   auth: {
     user: process.env.MAIL_EMAIL,
     pass: process.env.MAIL_PASSWORD,
@@ -411,7 +411,6 @@ padding-top: 10px;
           secure: false, 
         // port: 465,
         tls: {
-          ciphers: "SSLv3",
           rejectUnauthorized: false,
         },
        

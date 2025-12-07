@@ -237,7 +237,12 @@ padding-top: 10px;
 <body>
 
 <div class="container">
- 
+   <div class="watermark" style=" position: absolute;top: 20%;left: 30%;bottom: 100px;width: 100%;height: 70%; background-image: url(${image});
+   background-repeat: no-repeat;
+    background-size: 70%;
+    opacity: 0.2;
+    transform: rotate(-45deg); z-index: -1;">
+    </div>
 <div class="header" style="background-color: grey;padding-top: 10px;">
     <h1>Cargo Receipt</h1>
     <img src=${image} alt="Company Logo" class="logo"> 

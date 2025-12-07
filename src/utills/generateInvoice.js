@@ -124,6 +124,7 @@ class Invoice {
     } = data;
 
    const image = "https://res.cloudinary.com/defbw7rt6/image/upload/v1763884844/logo5_lxyq7z.png";
+   const stamp = "https://res.cloudinary.com/defbw7rt6/image/upload/v1734471590/approved-no-bg_dgfo3c.png"
     const html = 
     `<!DOCTYPE html>
 <html>
@@ -315,7 +316,7 @@ padding-top: 10px;
 
 <div class="signature-row">
 <p><strong>MGT:</strong></p>
-<img src=${image} alt="Sender Signature" style="width: 150px;"> 
+<img src=${stamp} alt="Sender Signature" style="width: 150px;"> 
 </div>
 <div class="footer">
 <p>© ${new Date().getFullYear()} SwiftfreightSolutions. All rights reserved.</p>

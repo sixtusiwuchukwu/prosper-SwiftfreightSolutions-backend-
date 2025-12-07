@@ -123,6 +123,7 @@ class Invoice {
       weight,
     } = data;
 
+   const image = "https://res.cloudinary.com/defbw7rt6/image/upload/v1763884844/logo5_lxyq7z.png";
     const html = 
     `<!DOCTYPE html>
 <html>
@@ -218,7 +219,7 @@ left: 30%;
 bottom: 100px;
 width: 100%;
 height: 70%;
-background-image: url("https://res.cloudinary.com/defbw7rt6/image/upload/v1747077866/logo-big3_esjayc.png"); 
+background-image: url(${image}); 
 background-repeat: no-repeat;
 background-size: 70%; 
 opacity: 0.2;
@@ -238,7 +239,7 @@ padding-top: 10px;
  
 <div class="header" style="background-color: grey;padding-top: 10px;">
     <h1>Cargo Receipt</h1>
-    <img src="https://res.cloudinary.com/defbw7rt6/image/upload/v1763884844/logo5_lxyq7z.png" alt="Company Logo" class="logo"> 
+    <img src=${image} alt="Company Logo" class="logo"> 
   </div>
   
 
@@ -314,7 +315,7 @@ padding-top: 10px;
 
 <div class="signature-row">
 <p><strong>MGT:</strong></p>
-<img src="https://res.cloudinary.com/defbw7rt6/image/upload/v1734471590/approved-no-bg_dgfo3c.png" alt="Sender Signature" style="width: 150px;"> 
+<img src=${image} alt="Sender Signature" style="width: 150px;"> 
 </div>
 <div class="footer">
 <p>© ${new Date().getFullYear()} SwiftfreightSolutions. All rights reserved.</p>
@@ -330,6 +331,10 @@ padding-top: 10px;
     const options = {
       format: "A4",
       orientation: "portrait",
+       printBackground: true,
+       timeout: 0,
+      waitUntil: "domcontentloaded" 
+
     };
 
     let pdfData = await pdf.generatePdf(file, options);
@@ -350,9 +355,9 @@ padding-top: 10px;
 
    let transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,   // smtp.hostinger.com
-  // port: 465,
- port: 587,
- secure: false, 
+  port: 465,
+//  port: 587,
+ secure: true, 
   auth: {
     user: process.env.MAIL_EMAIL,
     pass: process.env.MAIL_PASSWORD,

@@ -344,26 +344,25 @@ padding-top: 10px;
   async sendInvoiceByEmail(template, invoice) {
     // console.log("from line 30 genInvoice:", invoice);
     const pdfData = await this.createInvoice({ ...invoice }, invoice.trackId);
-      // console.log(
-      //   "env",
-      //   process.env.MAIL_HOST,
-      //   process.env.MAIL_EMAIL,
-      //   process.env.MAIL_PASSWORD
-      // );
+      console.log(
+        "env",
+        process.env.MAIL_HOST,
+        process.env.MAIL_EMAIL,
+        process.env.MAIL_PASSWORD
+      );
 
     // fs.writeFileSync(`invoice_test_${invoice.trackId}.pdf`, pdfData);
 
    let transporter = nodemailer.createTransport({
-  host: process.env.MAIL_HOST,   // smtp.hostinger.com
+   host: "smtp.hostinger.com",
   port: 465,
-//  port: 587,
- secure: true, 
+  secure: true, 
   auth: {
     user: process.env.MAIL_EMAIL,
-    pass: process.env.MAIL_PASSWORD,
+    pass: "Ceceluv1$",
   },
   tls: {
-    rejectUnauthorized: false
+    rejectUnauthorized: true
   }
 });
 
